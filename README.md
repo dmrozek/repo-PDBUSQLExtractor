@@ -3,6 +3,8 @@ A repository for PDBUSQLExtractor for Azure Data Lake for parsing and extracting
 
 A part of a U-SQL script parsing and extracting data from the ATOM sections of the PDB files.
 
+
+```SQL
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 @test =
@@ -28,10 +30,11 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
 OUTPUT @test
 TO "/output/resultatom.tsv"
 USING Outputters.Tsv();
+```
 
+Sample U-SQL script parsing and extracting data from the SEQRES  sections of PDB files.
 
-Sample U-SQL script parsing and extracting data from the \textit{SEQRES} sections of PDB files.
-
+```
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 @test =
@@ -58,10 +61,11 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
 OUTPUT @test
 TO "/output/resultatom.tsv"
 USING Outputters.Tsv();
-
+```
 
 Extraction of the ATOM section data from PDB data sets assembled in sequential files with the use of the PDBConcatExtractor extractor.
 
+```
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 @test =
@@ -72,11 +76,12 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
 OUTPUT @test
 TO "/output/resultatom.txt"
 USING Outputters.Tsv();
-
+```
 
 
 Sample U-SQL script that extracts data from PDB files and produces the output rowset containing distances between C-alpha atoms within protein structures: 
 
+```
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 // S1.Data extraction
@@ -133,3 +138,4 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
 OUTPUT @filteredDistances
 TO "/output/distances.csv"
 USING Outputters.Csv();
+```
