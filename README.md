@@ -1,5 +1,7 @@
 # repo-PDBUSQLExtractor
-A repository for PDBUSQLExtractor for Azure Data Lake for parsing and extracting macromolecular data of protein structures
+A repository for PDBUSQLExtractor for Azure Data Lake for parsing and extracting macromolecular data of protein structures.
+
+Calculation of structural features of proteins, RNA molecules, and RNA-protein complexes on the basis of their geometries and studying various interactions within protein molecules, for which high-resolution structures are stored in Protein Data Bank (PDB), require parsing and extraction of suitable data stored in text files. To perform these operations on large scale in the face of the growing amount of macromolecular data in public repositories, we propose to perform them in the distributed environment of Azure Data Lake and scale the calculations on the Cloud. PDBUSQLExtractor is a set of dedicated data extractors for PDB files that can be used in various types of calculations performed over protein structures in the Azure Data Lake. Results of our tests show that the Cloud storage space occupied by the macromolecular data can be successfully reduced by using compression of PDB files without significant loss of data processing efficiency. Moreover, our experiments show that the performed calculations can be significantly accelerated when using large sequential files for storing macromolecular data and by parallelizing the calculations and data extractions that precede them. Finally, the PDBUSQLExtractor allows for all the protein- and RNA-related calculations can be performed in a declarative way in U-SQL scripts for Data Lake Analytics.
 
 A part of a U-SQL script parsing and extracting data from the ATOM sections of the PDB files.
 
