@@ -6,7 +6,7 @@ Calculation of structural features of proteins, RNA molecules, and RNA-protein c
 In order to use the PDBUSQLExtractor a user must initially complete 3 steps:
 1) set up the Azure Data Lake environment,
 2) upload PDB files with protein structures into the Azure Data Lake Store, 
-3) register the \textit{PDBUSQLExtractor} library in the Azure Data Lake Analytics.
+3) register the PDBUSQLExtractor library in the Azure Data Lake Analytics.
 
 All of the mentioned operations can be completed through the Azure portal, Azure PowerShell, Azure CLI, or appropriate Application Programming Interfaces (APIs). Users should follow the Azure Data Lake Analytics Documentation for the particular method.
 
