@@ -45,7 +45,7 @@ USING Outputters.Tsv();
 
 Sample U-SQL script parsing and extracting data from the SEQRES  sections of PDB files.
 
-```
+```SQL
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 @test =
@@ -76,7 +76,7 @@ USING Outputters.Tsv();
 
 Extraction of the ATOM section data from PDB data sets assembled in sequential files with the use of the PDBConcatExtractor extractor.
 
-```
+```SQL
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 @test =
@@ -92,7 +92,7 @@ USING Outputters.Tsv();
 
 Sample U-SQL script that extracts data from PDB files and produces the output rowset containing distances between C-alpha atoms within protein structures: 
 
-```
+```C#
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 // S1.Data extraction
