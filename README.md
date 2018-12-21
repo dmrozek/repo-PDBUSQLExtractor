@@ -95,7 +95,7 @@ Sample U-SQL script that extracts data from PDB files and produces the output ro
 ```SQL
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
-// S1.Data extraction
+//-- S1.Data extraction
 @extracted =
     EXTRACT proteinId string,
             modelId int,
@@ -116,7 +116,7 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
     FROM "/input/pdbdataset.ent.gz"
     USING new PDBUSQLExtractor.PDBConcatExtractor("ATOM");
 
-// S2.Selecting C-alpha atoms
+//-- S2.Selecting C-alpha atoms
 @filteredAtoms =
     SELECT proteinId,
            resSeq,
@@ -130,7 +130,7 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
     FROM @extracted
     WHERE name.Trim() == "CA";
 
-// S3.Calculating the distance between C-alpha atoms and their coordinates, together with the index of the previous residue 
+//-- S3.Calculating the distance between C-alpha atoms and their coordinates, together with the index of the previous residue 
 @filteredDistances =
     SELECT a1.proteinId, a1.chainID, a1.resName,
            Math.Sqrt(Math.Pow(a2.x - a1.x, 2) + Math.Pow(a2.y - a1.y, 2) 
@@ -145,7 +145,7 @@ REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 
   
-// S4.Storing results of S3 in csv file
+//-- S4.Storing results of S3 in csv file
 OUTPUT @filteredDistances
 TO "/output/distances.csv"
 USING Outputters.Csv();
