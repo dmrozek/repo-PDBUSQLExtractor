@@ -92,7 +92,7 @@ USING Outputters.Tsv();
 
 Sample U-SQL script that extracts data from PDB files and produces the output rowset containing distances between C-alpha atoms within protein structures: 
 
-```C#
+```SQL
 REFERENCE ASSEMBLY [PDBUSQLExtractor];
 
 // S1.Data extraction
